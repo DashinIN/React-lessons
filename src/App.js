@@ -1,13 +1,17 @@
+import { useState } from 'react';
 import './App.scss';
 
 function App() {
+
+  const [count, setCount] = useState(0);
+  
   return (
     <div className="App">
       <div>
         <h2>Счетчик:</h2>
-        <h1>0</h1>
-        <button className="minus">- Минус</button>
-        <button className="plus">Плюс +</button>
+        <h1>{count}</h1>
+        <button className="minus" onClick={() => setCount(prevCount => prevCount - 1 )}>- Минус</button>
+        <button className="plus" onClick={() => setCount(prevCount => prevCount + 1 )} >Плюс +</button>
       </div>
     </div>
   );
